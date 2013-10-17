@@ -1,0 +1,20 @@
+{
+    "name": "brackets-indentator",
+    "title": "Indentator",
+    "description": "Re-indent a document using your current tab settings. Adds an 'Indent document' command to the Edit menu.",
+    "homepage": "https://github.com/ahuth/brackets-indentator",
+    "version": "1.0.0",
+    "author": "Andrew Huth (https://github.com/ahuth)",
+    "license": "MIT",
+    "categories": "formatting",
+    "keywords": [
+        "format",
+        "formatting",
+        "indent",
+        "autoindent",
+        "tabs"
+    ],
+    "engines": {
+        "brackets": ">=0.24.0"
+    }
+}

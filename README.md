@@ -5,7 +5,7 @@ Indentator
 
 Re-indent a document according to your current indentation settings (tabs vs spaces, 2/4/8 spaces, etc).
 
-Useful for converting someone else's style to your own.  Run by going to the Edit menu and selecting "Indent Document" or Ctrl-Alt-I
+Useful for converting someone else's style to your own.  Run by going to the Edit menu and selecting "Indent Document" or Ctrl+Alt+I
 
 - - -
 

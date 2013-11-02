@@ -10,7 +10,7 @@ define(function (require, exports, module) {
         EditorManager  = brackets.getModule("editor/EditorManager"),
         Menus          = brackets.getModule("command/Menus"),
         COMMAND_ID     = "indentator.autoIndent";
-
+    
     function autoIndent() {
         var editor = EditorManager.getFocusedEditor();
         if (!editor) {
@@ -26,6 +26,6 @@ define(function (require, exports, module) {
     
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);
     
-    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU, [{ "key": "Ctrl-Alt-I" }]);
+    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU, [{ "key": "Ctrl+Alt+I" }]);
     menu.addMenuItem(COMMAND_ID);
 });

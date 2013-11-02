@@ -1,7 +1,7 @@
 {
     "name": "brackets-indentator",
     "title": "Indentator",
-    "description": "Re-indent a document using your current tab settings. Adds an 'Indent document' command to the Edit menu. Also adds a keyboard shortcut Ctrl-Alt I.",
+    "description": "Re-indent a document using your current tab settings. Adds an 'Indent document' command to the Edit menu. Also adds a keyboard shortcut Ctrl+Alt+I.",
     "homepage": "https://github.com/ahuth/brackets-indentator",
     "version": "1.0.1",
     "author": "Andrew Huth (https://github.com/ahuth)",

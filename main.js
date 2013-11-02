@@ -5,7 +5,7 @@
 // preferences (i.e. tabs vs spaces, 2/4/8 spaces).
 define(function (require, exports, module) {
     "use strict";
-
+    
     var CommandManager = brackets.getModule("command/CommandManager"),
         EditorManager  = brackets.getModule("editor/EditorManager"),
         Menus          = brackets.getModule("command/Menus"),
@@ -25,7 +25,7 @@ define(function (require, exports, module) {
     }
     
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);
-
-    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
+    
+    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU, [{ "key": "Ctrl-Alt-I" }]);
     menu.addMenuItem(COMMAND_ID);
 });

@@ -26,6 +26,6 @@ define(function (require, exports, module) {
     
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);
     
-    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU, [{ "key": "Ctrl+Alt+I" }]);
+    var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU, [{ "key": "Ctrl-Alt-I" , "platform": "win"}, { "key": "Cmd-Alt-I", "platform": "mac"}]);
     menu.addMenuItem(COMMAND_ID);
 });

@@ -5,12 +5,12 @@
 // preferences (i.e. tabs vs spaces, 2/4/8 spaces).
 define(function (require, exports, module) {
     "use strict";
-
+    
     var CommandManager = brackets.getModule("command/CommandManager"),
         EditorManager  = brackets.getModule("editor/EditorManager"),
         Menus          = brackets.getModule("command/Menus"),
         COMMAND_ID     = "indentator.autoIndent";
-
+    
     function autoIndent() {
         var editor = EditorManager.getFocusedEditor();
         if (!editor) {
@@ -25,7 +25,7 @@ define(function (require, exports, module) {
     }
     
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);
-
+    
     var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
-    menu.addMenuItem(COMMAND_ID);
+    menu.addMenuItem(COMMAND_ID, [{ "key": "Ctrl-Alt-I" }, { "key": "Ctrl-Alt-I", "platform": "mac" }]);
 });

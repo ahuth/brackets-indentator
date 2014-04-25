@@ -15,6 +15,6 @@
         "tabs"
     ],
     "engines": {
-        "brackets": ">=0.24.0"
+        "brackets": ">=0.36.0"
     }
 }

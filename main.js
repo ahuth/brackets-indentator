@@ -5,18 +5,27 @@
 // preferences (i.e. tabs vs spaces, 2/4/8 spaces).
 define(function (require, exports, module) {
     "use strict";
-    
-    var CommandManager = brackets.getModule("command/CommandManager"),
-        EditorManager  = brackets.getModule("editor/EditorManager"),
-        Menus          = brackets.getModule("command/Menus"),
-        COMMAND_ID     = "indentator.autoIndent";
-    
+
+    var CommandManager     = brackets.getModule("command/CommandManager"),
+        EditorManager      = brackets.getModule("editor/EditorManager"),
+        PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
+        Menus              = brackets.getModule("command/Menus"),
+        COMMAND_ID         = "indentator.autoIndent";
+
     function autoIndent() {
         var editor = EditorManager.getFocusedEditor();
         if (!editor) {
             return;
         }
         var doc = editor._codeMirror;
+
+        // Update the editor with the current indent settings.
+        var tabSize = PreferencesManager.get("tabSize");
+        var spaceUnits = PreferencesManager.get("spaceUnits");
+        var useTabChar = PreferencesManager.get("useTabChar");
+        doc.setOption("indentUnit", spaceUnits);
+        doc.setOption("tabSize", tabSize);
+        doc.setOption("indentWithTabs", useTabChar);
 
         // Indent each line of the document.
         doc.eachLine(function (line) {

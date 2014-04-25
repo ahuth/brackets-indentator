@@ -13,6 +13,7 @@ define(function (require, exports, module) {
         COMMAND_ID         = "indentator.autoIndent";
 
     function autoIndent() {
+        // Get the editor and document.
         var editor = EditorManager.getFocusedEditor();
         if (!editor) {
             return;

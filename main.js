@@ -23,9 +23,9 @@ define(function (require, exports, module) {
             doc.indentLine(index);
         }
     }
-    
+
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);
-    
+
     var menu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
     menu.addMenuItem(COMMAND_ID, [{ "key": "Ctrl-Alt-I" }, { "key": "Ctrl-Alt-I", "platform": "mac" }]);
 });

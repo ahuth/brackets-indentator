@@ -3,25 +3,14 @@ Indentator
 
 **Extension for Adobe Brackets**
 
-Re-indent a document according to your current indentation settings (tabs vs spaces, 2/4/8 spaces, etc).
+Re-indent a document according to your current indentation settings.
 
-Useful for converting someone else's style to your own.  Run by going to the Edit menu and selecting "Indent Document" or Ctrl+Alt+I
+Useful for converting someone else's style to your own.  Run by selecting
+`Indent Document` under the `Edit` menu, or using the `Ctrl+Alt+I` shortcut.
 
-- - -
+##Install
 
-##Easiest install
-
-File > Extension Manager > Available
-
-Search for 'Indentator'
-
-##Pretty easy install
-
-File > Extension Manager > Install from url...
-
-Paste into the box "https://github.com/ahuth/brackets-indentator"
-
-- - -
+From the extension manager, search for 'Indentator' and press 'Install'.
 
 ##License
 

@@ -1,8 +1,7 @@
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
 /*global define, $, brackets */
 
-// Indentator indents each line in the open document according to your current
-// preferences (i.e. tabs vs spaces, 2/4/8 spaces).
+// Re-indent the open document according to your current indentation settings.
 define(function (require, exports, module) {
     "use strict";
 

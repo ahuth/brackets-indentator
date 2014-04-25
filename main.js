@@ -21,12 +21,9 @@ define(function (require, exports, module) {
         var doc = editor._codeMirror;
 
         // Update the editor with the current indent settings.
-        var tabSize = PreferencesManager.get("tabSize");
-        var spaceUnits = PreferencesManager.get("spaceUnits");
-        var useTabChar = PreferencesManager.get("useTabChar");
-        doc.setOption("indentUnit", spaceUnits);
-        doc.setOption("tabSize", tabSize);
-        doc.setOption("indentWithTabs", useTabChar);
+        doc.setOption("indentUnit", PreferencesManager.get("spaceUnits"));
+        doc.setOption("tabSize", PreferencesManager.get("tabSize"));
+        doc.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
 
         // Indent each line of the document.
         doc.eachLine(function (line) {

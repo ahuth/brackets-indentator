@@ -16,12 +16,12 @@ define(function (require, exports, module) {
         if (!editor) {
             return;
         }
-        var doc = editor._codeMirror,
-            lines = doc.lineCount(),
-            index;
-        for (index = 0; index < lines; index++) {
-            doc.indentLine(index);
-        }
+        var doc = editor._codeMirror;
+
+        // Indent each line of the document.
+        doc.eachLine(function (line) {
+            doc.indentLine(line.lineNo(), "smart");
+        });
     }
 
     CommandManager.register("Indent Document", COMMAND_ID, autoIndent);

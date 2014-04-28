@@ -13,11 +13,8 @@ define(function (require, exports, module) {
 
     function autoIndent() {
         // Get the editor and document.
-        var editor = EditorManager.getFocusedEditor();
-        if (!editor) {
-            return;
-        }
-        var codeMirror = editor._codeMirror;
+        var editor = EditorManager.getFocusedEditor(),
+            codeMirror = editor._codeMirror;
 
         // Update the editor with the current indent settings.
         codeMirror.setOption("indentUnit", PreferencesManager.get("spaceUnits"));

@@ -22,8 +22,10 @@ define(function (require, exports, module) {
         codeMirror.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
 
         // Indent each line of the document.
-        codeMirror.eachLine(function (line) {
-            codeMirror.indentLine(line.lineNo(), "smart");
+        codeMirror.operation(function () {
+            codeMirror.eachLine(function (line) {
+                codeMirror.indentLine(line.lineNo(), "smart");
+            });
         });
     }
 

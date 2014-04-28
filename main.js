@@ -12,7 +12,7 @@ define(function (require, exports, module) {
         COMMAND_ID         = "indentator.autoIndent";
 
     function autoIndent() {
-        // Get the editor and document.
+        // Get the current editor.
         var editor = EditorManager.getFocusedEditor(),
             codeMirror = editor._codeMirror;
 
@@ -21,7 +21,7 @@ define(function (require, exports, module) {
         codeMirror.setOption("tabSize", PreferencesManager.get("tabSize"));
         codeMirror.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
 
-        // Indent each line of the document.
+        // Re-indent each line of the editor.
         codeMirror.operation(function () {
             codeMirror.eachLine(function (line) {
                 codeMirror.indentLine(line.lineNo(), "smart");

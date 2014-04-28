@@ -12,21 +12,20 @@ define(function (require, exports, module) {
         COMMAND_ID         = "indentator.autoIndent";
 
     function autoIndent() {
-        // Get the editor and document.
-        var editor = EditorManager.getFocusedEditor();
-        if (!editor) {
-            return;
-        }
-        var doc = editor._codeMirror;
+        // Get the current editor.
+        var editor = EditorManager.getFocusedEditor(),
+            codeMirror = editor._codeMirror;
 
         // Update the editor with the current indent settings.
-        doc.setOption("indentUnit", PreferencesManager.get("spaceUnits"));
-        doc.setOption("tabSize", PreferencesManager.get("tabSize"));
-        doc.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
+        codeMirror.setOption("indentUnit", PreferencesManager.get("spaceUnits"));
+        codeMirror.setOption("tabSize", PreferencesManager.get("tabSize"));
+        codeMirror.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
 
-        // Indent each line of the document.
-        doc.eachLine(function (line) {
-            doc.indentLine(line.lineNo(), "smart");
+        // Re-indent each line of the editor.
+        codeMirror.operation(function () {
+            codeMirror.eachLine(function (line) {
+                codeMirror.indentLine(line.lineNo(), "smart");
+            });
         });
     }
 

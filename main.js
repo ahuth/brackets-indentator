@@ -7,24 +7,18 @@ define(function (require, exports, module) {
 
     var CommandManager     = brackets.getModule("command/CommandManager"),
         EditorManager      = brackets.getModule("editor/EditorManager"),
-        PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
         Menus              = brackets.getModule("command/Menus"),
         COMMAND_ID         = "indentator.autoIndent";
 
     function autoIndent() {
         // Get the current editor.
-        var editor = EditorManager.getFocusedEditor(),
+        var editor = EditorManager.getCurrentFullEditor(),
             codeMirror = editor._codeMirror;
-
-        // Update the editor with the current indent settings.
-        codeMirror.setOption("indentUnit", PreferencesManager.get("spaceUnits"));
-        codeMirror.setOption("tabSize", PreferencesManager.get("tabSize"));
-        codeMirror.setOption("indentWithTabs", PreferencesManager.get("useTabChar"));
 
         // Re-indent each line of the editor.
         codeMirror.operation(function () {
             codeMirror.eachLine(function (line) {
-                codeMirror.indentLine(line.lineNo(), "smart");
+                codeMirror.indentLine(line.lineNo());
             });
         });
     }

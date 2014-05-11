@@ -18,7 +18,7 @@ define(function (require, exports, module) {
         // Re-indent each line of the editor.
         codeMirror.operation(function () {
             codeMirror.eachLine(function (line) {
-                codeMirror.indentLine(line.lineNo(), "smart");
+                codeMirror.indentLine(line.lineNo());
             });
         });
     }

@@ -13,7 +13,7 @@ define(function (require, exports, module) {
 
     function autoIndent() {
         // Get the current editor.
-        var editor = EditorManager.getFocusedEditor(),
+        var editor = EditorManager.getCurrentFullEditor(),
             codeMirror = editor._codeMirror;
 
         // Update the editor with the current indent settings.

@@ -5,10 +5,10 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var CommandManager     = brackets.getModule("command/CommandManager"),
-        EditorManager      = brackets.getModule("editor/EditorManager"),
-        Menus              = brackets.getModule("command/Menus"),
-        COMMAND_ID         = "indentator.autoIndent";
+    var CommandManager = brackets.getModule("command/CommandManager"),
+        EditorManager  = brackets.getModule("editor/EditorManager"),
+        Menus          = brackets.getModule("command/Menus"),
+        COMMAND_ID     = "indentator.autoIndent";
 
     function autoIndent() {
         // Get the current editor.

@@ -8,11 +8,11 @@ Re-indent a document according to your current indentation settings.
 Useful for converting someone else's style to your own.  Run by selecting
 `Indent Document` under the `Edit` menu, or using the `Ctrl+Alt+I` shortcut.
 
-##Install
+## Install
 
 From the extension manager, search for 'Indentator' and press 'Install'.
 
-##License
+## License
 
 This is free and unencumbered software released into the public domain.
 
